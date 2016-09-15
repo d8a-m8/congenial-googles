@@ -3,6 +3,7 @@ title: "toyline2-projectboogaloo"
 author: "d8a-m8"
 date: "September 15, 2016"
 output: html_document
+##yamal front matter ^^
 ---
 
 ```{r setup, include=FALSE}

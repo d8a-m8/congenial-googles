@@ -2,7 +2,7 @@
 title: "toyline2-projectboogaloo"
 author: "d8a-m8"
 date: "September 15, 2016"
-output: html_document
+output: github_document
 ##yamal front matter ^^
 ---
 

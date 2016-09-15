@@ -1,7 +1,7 @@
 ---
 title: "toyline2-projectboogaloo"
 author: "d8a-m8"
-date: "September 15, 2016"
+date: "`r format (Sys.Date())`"
 output: github_document
 ##yamal front matter ^^
 ---
@@ -38,14 +38,16 @@ rs_y <- sort(r_y, decreasing = F)
 x.frame <- cbind(s_x, rs_x)
 y.frame <- cbind(s_y, rs_y)
 
-plot1 <- plot(x,y,echo=F)
-plot2 <- plot(s_x,s_y,echo=F)
+plot1 <- plot(x,y)
+plot2 <- plot(s_x,s_y)
 ##plot3 <- plot(r_x,r_y)
 
-hplot1 <- hist(x, plot = F)
+hplot1 <- hist(x)
 
 xy.data <- (cbind(x,y))
-summary(xy.data,echo=F)
+ds_xy.data <- summary(xy.data)
 
-##print(x.frame)
-##print(y.frame)
+print(plot1)
+print(plot2)
+print(hplot1)
+print(ds_xy.data)

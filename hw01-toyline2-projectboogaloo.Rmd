@@ -16,16 +16,36 @@ This is an R Markdown document. Markdown is a simple formatting syntax for autho
 
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
-```{r cars}
-summary(cars)
-```
+## toyline 1 copied into toyline 2...
+a = 5
+b = 3
+n = 500
+x <- runif(n)
+SigSq <- sd(x)
+y <- a + b*x + rnorm(n, sd = sqrt(SigSq))
 
-## Including Plots
+avrx = mean(x)
 
-You can also embed plots, for example:
+s_x <- sort(x, decreasing = F)
+s_y <- sort(y, decreasing = F)
 
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
+r_x <- rank(x,na.last=T,ties.method = 'first')
+r_y <- rank(y,na.last=T,ties.method = 'first')
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+rs_x <- sort(r_x, decreasing = F)
+rs_y <- sort(r_y, decreasing = F)
+
+x.frame <- cbind(s_x, rs_x)
+y.frame <- cbind(s_y, rs_y)
+
+plot1 <- plot(x,y,echo=F)
+plot2 <- plot(s_x,s_y,echo=F)
+##plot3 <- plot(r_x,r_y)
+
+hplot1 <- hist(x, plot = F)
+
+xy.data <- (cbind(x,y))
+summary(xy.data,echo=F)
+
+##print(x.frame)
+##print(y.frame)
